@@ -21,7 +21,9 @@ app.add_middleware(
 )
 
 # Model configuration
-MODEL_PATH = "model/model.keras"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "model.keras")
+
 model = tf.keras.models.load_model(MODEL_PATH)
 class_names = ['glioma', 'meningioma', 'notumor', 'pituitary']
 
